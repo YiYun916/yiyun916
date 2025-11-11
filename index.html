@@ -1,1 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>服务器正在被攻击</title>
+    <style>
+        body {
+            background-color: #0a0a0a;
+            color: #c0c0c0;
+            font-family: 'Courier New', monospace;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+            text-align: center;
+        }
+        .error-code {
+            font-size: 72px;
+            margin-bottom: 20px;
+            animation: rainbowGlow 1.2s infinite;
+        }
 
+        .button {
+            background-color: #222222;
+            border: 2px solid;
+            padding: 12px 30px;
+            text-decoration: none;
+            font-size: 18px;
+            margin-bottom: 30px;
+            animation: 
+                borderRainbow 1.5s infinite,
+                textFlicker 0.8s infinite;
+        }
+        @keyframes rainbowGlow {
+            0% { 
+                color: #ff0000;
+                text-shadow: 0 0 20px #ff0000;
+            }
+            25% {
+                color: #00ff00;
+                text-shadow: 0 0 20px #00ff00;
+            }
+            50% {
+                color: #00ffff;
+                text-shadow: 0 0 20px #00ffff;
+            }
+            75% {
+                color: #ff00ff;
+                text-shadow: 0 0 20px #ff00ff;
+            }
+            100% {
+                color: #ff0000;
+                text-shadow: 0 0 20px #ff0000;
+            }
+        }
+
+        /* 颜色终于写好了 ，认准xby*/
+        @keyframes borderRainbow {
+            0% { border-color: #ff0000; }
+            25% { border-color: #00ff00; }
+            50% { border-color: #00ffff; }
+            75% { border-color: #ff00ff; }
+            100% { border-color: #ff0000; }
+        }
+        @keyframes textFlicker {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.3; }
+        }
+        .title {
+            font-size: 28px;
+            margin-bottom: 30px;
+            letter-spacing: 2px;
+            text-shadow: 0 0 10px #00ff0020;
+        }
+
+        .message {
+            max-width: 600px;
+            line-height: 1.6;
+            margin-bottom: 40px;
+            color: #88ff88;
+            text-shadow: 0 0 5px rgba(136, 255, 136, 0.3);
+            animation: textShift 3s infinite;
+        }
+
+        @keyframes textShift {
+            0%, 100% { transform: translateX(0); }
+            25% { transform: translateX(2px); }
+            75% { transform: translateX(-2px); }
+        }
+
+        .button:hover {
+            background-color: #333;
+            animation-play-state: paused;
+        }
+
+        .restart {
+            color: #666;
+            text-decoration: none;
+            font-size: 14px;
+            margin-bottom: 15px;
+            transition: 0.3s;
+        }
+
+        .footer {
+            color: #444;
+            font-size: 12px;
+            position: absolute;
+            bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="error-code">404</div>
+    <h1 class="title">服务器错误了</h1>
+    
+    <div class="message">
+        网络不稳定或服务器被攻击<br>
+        请检查您的网络或者重启软件<br>
+        一直显示此界面就是服务器已被攻击<br>
+        请等待修复<br><br>
+        点击下方加入官方群聊
+    </div>
+
+    <a href="https://qm.qq.com/q/LWtQzYQawq" class="button">加入群聊</a>
+    <a  class="restart">Restart Software</a>
+    
+    <div class="footer">慧影后台</div>
+</body>
+</html>
